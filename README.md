@@ -1,58 +1,70 @@
-# Turborepo Tailwind CSS starter
+# 🧠 MealMind
 
-This Turborepo starter is maintained by the Turborepo core team.
+**MealMind** is a fullstack TypeScript app for meal planning, recipe inspiration, and automatic grocery list generation. Built to showcase modern web architecture, DX, and performance.
 
-## Using this example
+---
 
-Run the following command:
+## ✨ Features
 
-```sh
-npx create-turbo@latest -e with-tailwind
+- 🍽️ **Smart Meal Planning** – Drag & drop weekly planner
+- 📦 **Auto Grocery Lists** – Based on chosen recipes
+- 🔎 **Recipe Search** – Filter by ingredients, tags, macros
+- 📋 **Shopping Modes** – Tick off items on mobile
+- 💬 **GraphQL API** – Typed from Hasura schema
+- ✅ **E2E & Unit Testing** – Cypress + Vitest
+
+---
+
+## 🧱 Tech Stack
+
+| Layer        | Technology                                   |
+| ------------ | -------------------------------------------- |
+| **Frontend** | [Next.js](https://nextjs.org/), TailwindCSS  |
+| **Backend**  | [Hono](https://hono.dev/) (Fast Edge API)    |
+| **GraphQL**  | [Hasura](https://hasura.io/)                 |
+| **Database** | PostgreSQL                                   |
+| **Testing**  | Cypress (E2E), Vitest (Unit)                 |
+| **Tooling**  | Turborepo, pnpm, TypeScript, GraphQL Codegen |
+
+---
+
+## 📂 Monorepo Structure
+
+```bash
+meal-mind/
+├── apps/
+│   ├── web/        # Next.js frontend
+│   ├── api/        # Hono backend API
+│   └── hasura/     # Hasura GraphQL Engine (Docker)
+├── packages/
+│   ├── ui/         # Shared UI components
+│   ├── graphql/    # GraphQL codegen & fragments
+│   ├── utils/      # Shared logic/utilities
+│   └── config/     # Shared tsconfig/lint/etc.
+└── turbo.json      # Task pipeline
 ```
 
-## What's inside?
+---
 
-This Turborepo includes the following packages/apps:
+## 🚀 Getting Started
 
-### Apps and Packages
+```bash
+pnpm install
+pnpm dev
 
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Building packages/ui
-
-This example is set up to produce compiled styles for `ui` components into the `dist` directory. The component `.tsx` files are consumed by the Next.js apps directly using `transpilePackages` in `next.config.ts`. This was chosen for several reasons:
-
-- Make sharing one `tailwind.config.ts` to apps and packages as easy as possible.
-- Make package compilation simple by only depending on the Next.js Compiler and `tailwindcss`.
-- Ensure Tailwind classes do not overwrite each other. The `ui` package uses a `ui-` prefix for it's classes.
-- Maintain clear package export boundaries.
-
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update the `tailwind.config.ts` in your apps to be aware of your package locations, so it can find all usages of the `tailwindcss` class names for CSS compilation.
-
-For example, in [tailwind.config.ts](packages/tailwind-config/tailwind.config.ts):
-
-```js
-  content: [
-    // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
-    "../../packages/ui/*.{js,ts,jsx,tsx}",
-  ],
+> localhost:3000          → Frontend
+> localhost:3001/hello    → Hono API
+> localhost:8080          → Hasura Console
 ```
 
-If you choose this strategy, you can remove the `tailwindcss` and `autoprefixer` dependencies from the `ui` package.
+## 🛠️ Skills Highlighted
 
-### Utilities
+- Fullstack type-safety /w GraphQL and Typescript
+- Modern monorepo architecture (Turborepo + pnpm)
+- Modular structure using turborepo with pnpm workspaces
+- Edge-ready backend with Hono
+- Test-driven development with cypress and vitest
 
-This Turborepo has some additional tools already setup for you:
+## 📸 Screenshots
 
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+_Coming soon…_
