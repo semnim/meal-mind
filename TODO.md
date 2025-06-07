@@ -5,6 +5,8 @@
 - [ ] Testing
 
   - [ ] Vitest
+    - [x] Research
+    - [ ] Impl. Hybrid approach (unify turborepo caching + vitest workspaces approach)
   - [ ] Cypress
 
 - [ ] API

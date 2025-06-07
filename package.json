@@ -1,12 +1,14 @@
 {
-  "name": "with-tailwind",
+  "name": "meal-mind",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "check-types": "turbo run check-types",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo run test",
+    "view-report": "turbo run view-report"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
