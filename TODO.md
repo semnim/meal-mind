@@ -33,7 +33,7 @@
   - [ ] Style pages
   - [ ] Add theming
 
-## Integration
+## Coding
 
 - [ ] Write API endpoints
 - [ ] Generate code for UI
